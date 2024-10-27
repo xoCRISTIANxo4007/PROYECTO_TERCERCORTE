@@ -40,4 +40,4 @@ if __name__ == "__main__":
     except ImportError as e:
         print(f"Error al importar módulos: {e}")
 
-# son las 12:45 y tengo que darle a pushing
+# primero haces una commit para actualizar los datos, luego vas al git y haces update y push
