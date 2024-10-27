@@ -40,4 +40,4 @@ if __name__ == "__main__":
     except ImportError as e:
         print(f"Error al importar módulos: {e}")
 
-# Esta vez solo commit y push
+# Ño eeeeefe
