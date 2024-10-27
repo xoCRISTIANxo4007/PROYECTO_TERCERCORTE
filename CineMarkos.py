@@ -40,4 +40,4 @@ if __name__ == "__main__":
     except ImportError as e:
         print(f"Error al importar módulos: {e}")
 
-#olaaaa son las 12:42 pm perro
+# son las 12:45 y tengo que darle a pushing
