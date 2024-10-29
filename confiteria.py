@@ -30,6 +30,9 @@ def vender_producto():
 
     except ValueError as e:
         print(f"Error: {e}")
+
+
+
 def vender_combo():
     print("\n--- Combos disponibles ---")
     for combo, detalles in combos.items():

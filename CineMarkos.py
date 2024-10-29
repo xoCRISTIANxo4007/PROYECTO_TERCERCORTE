@@ -1,4 +1,5 @@
 import confiteria
+import miembros
 from confiteria import vender_producto, vender_combo
 men=""" 
 █▀█ █▀█ █▄█ ▄▀█ █░░   █▀▀ █ █▀▄▀█ █░░ █▀
@@ -7,7 +8,7 @@ men="""
 def menu():
     while True:
         print(men)
-        print("\n--- Menú CineMarkos ---")
+        print("--- Menu CineMarkos ---")
         print("1. Confitería")
         print("2. Miembros")
         print("3. Cartelera")
@@ -17,14 +18,14 @@ def menu():
         try:
             opcion = int(input("Seleccione una opción: "))
         except ValueError:
-            print("Error: Debe ingresar un número válido.")
+            print("Error,debe ingresar un numero válido.")
             continue
 
         match opcion:
             case 1:
                 confiteria.confiteria_menu()
             case 2:
-                print("Nada, no hay no existe.")
+                miembros.menu_miembros()
             case 3:
                 print("Nada, no hay no existe.")
             case 4:
@@ -39,4 +40,4 @@ if __name__ == "__main__":
         menu()
     except ImportError as e:
         print(f"Error al importar módulos: {e}")
-# sesesees
+
