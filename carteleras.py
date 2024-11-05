@@ -1,9 +1,8 @@
-
 peliculas = ["La La Land","Whiplash","Django Unchained","El Increible Castillo Vagabundo","Parasite","Inception"]
 
 def mostrar_cartelera():
     print("\n--- Cartelera de Películas ---")
-    for i, pelicula in enumerate(peliculas, start=1):
+    for i, pelicula in enumerate(peliculas, 1):
         print(f"{i}. {pelicula}")
 #-------------------------------------------------------------------------------------------------------
 def buscar_pelicula():
