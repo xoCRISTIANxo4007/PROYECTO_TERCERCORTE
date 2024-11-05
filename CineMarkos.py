@@ -1,3 +1,4 @@
+import carteleras
 import confiteria
 import miembros
 from confiteria import vender_producto, vender_combo
@@ -8,7 +9,7 @@ men="""
 def menu():
     while True:
         print(men)
-        print("--- Menu CineMarkos ---")
+        print("***** Menu CineMarkos *****")
         print("1. Confitería")
         print("2. Miembros")
         print("3. Cartelera")
@@ -27,7 +28,7 @@ def menu():
             case 2:
                 miembros.menu_miembros()
             case 3:
-                print("Nada, no hay no existe.")
+                carteleras.menu_cartelera()
             case 4:
                 print("Nada, no hay no existe.")
             case 5:
