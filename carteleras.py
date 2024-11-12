@@ -36,14 +36,65 @@ def ordenar_alfabeticamente():
         print(f"Error inesperado al ordenar la cartelera: {e}")
 
 #-------------------------------------------------------------------------------------------------------
+directores = [
+    "Damien Chazelle",
+    "Quentin Tarantino",
+    "Christopher Nolan",
+    "Bong Joon-ho",
+    "Hayao Miyazaki",
+    "Stanley Kubrick"
+]
+#-------------------------------------------------------------------------------------------------------
+def eliminar_pelicula():
+    mostrar_cartelera()
+    try:
+        indice = int(input("Ingrese el índice de la película que desea eliminar: ")) - 1
+        if 0 <= indice < len(peliculas):
+            pelicula_eliminada = peliculas.pop(indice)
+            print(f"La película '{pelicula_eliminada}' ha sido eliminada de la cartelera.")
+        else:
+            print("Índice inválido. Por favor, ingrese un índice dentro del rango.")
+    except ValueError:
+        print("Error: Debe ingresar un número válido.")
+
+#-------------------------------------------------------------------------------------------------------
+def peliculas_por_inicial():
+    letra = input("Ingrese la letra inicial de las películas que desea ver: ").strip().upper()
+    resultado = [p for p in peliculas if p.upper().startswith(letra)]
+    if resultado:
+        print(f"\nPelículas que comienzan con '{letra}':")
+        for pelicula in resultado:
+            print(pelicula)
+    else:
+        print(f"No se encontraron películas que comiencen con la letra '{letra}'.")
+#-------------------------------------------------------------------------------------------------------
+def buscar_letra_comun():
+    print("\n--- Películas y Directores con la misma letra inicial ---")
+    for pelicula in peliculas:
+        for director in directores:
+            if pelicula[0].upper() == director[0].upper():
+                print(f"Película: {pelicula} - Director: {director}")
+#-------------------------------------------------------------------------------------------------------
+def mostrar_combinaciones():
+    combinaciones = []
+    for pelicula in peliculas:
+        for director in directores:
+            combinaciones.append((pelicula, director))
+            print(f"Película: {pelicula}, Director: {director}")
+    print(f"\nTotal de combinaciones posibles: {len(combinaciones)}")
+#-------------------------------------------------------------------------------------------------------
 def menu_cartelera():
     while True:
-        print("**** CARTELERAS ****")
+        print("\n--- Menú de Cartelera CineMarkos ---")
         print("1. Mostrar cartelera")
         print("2. Buscar película")
         print("3. Agregar película")
         print("4. Ordenar cartelera alfabéticamente")
-        print("5. Volver al menú principal")
+        print("5. Eliminar película por índice")
+        print("6. Buscar películas por letra inicial")
+        print("7. Buscar películas y directores con la misma inicial")
+        print("8. Mostrar todas las combinaciones de películas y directores")
+        print("9. Volver al menú principal")
 
         try:
             opcion = int(input("Seleccione una opción: "))
@@ -61,7 +112,15 @@ def menu_cartelera():
             case 4:
                 ordenar_alfabeticamente()
             case 5:
-                print("Regresando al menú principal.")
+                eliminar_pelicula()
+            case 6:
+                peliculas_por_inicial()
+            case 7:
+                buscar_letra_comun()
+            case 8:
+                mostrar_combinaciones()
+            case 9:
+                print("Regresando al menu home.")
                 break
             case _:
-                print("Opción no válida. Intente de nuevo.")
+                print("Opcion no valida,try again")

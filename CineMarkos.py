@@ -9,7 +9,7 @@ men="""
 def menu():
     while True:
         print(men)
-        print("***** Menu CineMarkos *****")ss
+        print("***** Menu CineMarkos *****")
         print("1. Confitería")
         print("2. Miembros")
         print("3. Cartelera")
