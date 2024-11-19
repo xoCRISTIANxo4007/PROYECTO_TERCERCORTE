@@ -1,6 +1,7 @@
 import carteleras
 import confiteria
 import miembros
+import salas
 from confiteria import vender_producto, vender_combo
 men=""" 
 █▀█ █▀█ █▄█ ▄▀█ █░░   █▀▀ █ █▀▄▀█ █░░ █▀
@@ -30,7 +31,7 @@ def menu():
             case 3:
                 carteleras.menu_cartelera()
             case 4:
-                print("Nada, no hay no existe.")
+                salas.menu_salas()
             case 5:
                 print("Adiosssssssssss")
                 break
